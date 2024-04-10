@@ -3,6 +3,10 @@ on:
   workflow_dispatch:
   issues:
     types: [opened, edited]
+  push:
+    branches:
+    - main
+    - release/*
 jobs:
   greet:
     env:
