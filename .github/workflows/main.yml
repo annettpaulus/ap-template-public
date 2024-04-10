@@ -1,0 +1,30 @@
+name: Hello World Training Workflow
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited]
+  push:
+    branches:
+    - main
+    - release/*
+jobs:
+  greet:
+    env:
+        MY_ENV: "John Doe"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the User
+        run: echo "Hello World!"
+      # List all files in the current directory for comparison before and after actions/checkout@v2.
+      - run: ls -l
+      - uses: actions/checkout@v2
+      - run: ls -l
+      - name: Run a multi-line script
+        run: |
+          echo "Hello $MY_ENV"
+          echo "Hello $GITHUB_ACTOR"
+      - name: npm install, build and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm test
