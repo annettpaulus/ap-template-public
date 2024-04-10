@@ -1,4 +1,4 @@
-            - name: Git Changes
+ name: Git Changes
   # You may pin to the exact commit or the version.
   # uses: setare/git-changes-action@37ffff3bd82a710af3abab3af5e08815457cedd0
   uses: setare/git-changes-action@v0.1.4
