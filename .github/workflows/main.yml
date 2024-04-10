@@ -23,3 +23,8 @@ jobs:
         run: |
           echo "Hello $MY_ENV"
           echo "Hello $GITHUB_ACTOR"
+      - name: npm install, build and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm test
